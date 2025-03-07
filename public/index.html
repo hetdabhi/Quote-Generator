@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quote Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* GitHub Profile Styling */
+        .github-profile {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .github-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease-in-out;
+        }
+
+        .github-profile span {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Dark Mode Support */
+        body.dark-theme .github-profile span {
+            color: white;
+        }
+
+        body.dark-theme .github-profile img {
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- GitHub Profile Section -->
+    <a href="https://github.com/hetdabhi" target="_blank" rel="noopener noreferrer" class="github-profile">
+        <img src="https://github.com/hetdabhi.png" alt="GitHub Profile">
+        <span>Het Dabhi</span>
+    </a>
+
+    <!-- React App Root -->
+    <div id="root"></div>
+</body>
+</html>

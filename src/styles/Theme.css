@@ -1,0 +1,54 @@
+/* Apple-style Toggle Switch */
+.theme-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 3px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Slider (Moving Button Inside Toggle) */
+.toggle-slider {
+    width: 26px;
+    height: 26px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Move Slider to Right (Dark Mode) */
+.dark-theme .toggle-slider {
+    transform: translateX(30px);
+}
+
+/* Dark Mode Background */
+body.dark-theme {
+    background: linear-gradient(135deg, #222, #444);
+    color: white;
+}
+
+body.dark-theme .theme-toggle {
+    background: rgba(50, 50, 50, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover Effect */
+.theme-toggle:hover {
+    transform: scale(1.05);
+}
