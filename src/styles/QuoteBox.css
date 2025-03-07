@@ -5,6 +5,7 @@
     border-radius: 16px;
     box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
     max-width: 500px;
+    width: 90%;
     text-align: center;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
@@ -39,9 +40,10 @@
     align-items: center;
     gap: 15px;
     margin-top: 10px;
+    flex-wrap: wrap;
 }
 
-/* Buttons (Same Size) */
+/* Buttons */
 .new-quote-btn, .arrow-btn {
     background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
@@ -57,7 +59,7 @@
     text-align: center;
 }
 
-/* Arrow Button Styling */
+/* Arrow Button */
 .arrow-btn {
     width: 50px;
     font-size: 1.5rem;
@@ -72,17 +74,43 @@
     box-shadow: none;
 }
 
-/* Hover Effect */
+/* Hover & Click Effects */
 .new-quote-btn:hover, .arrow-btn:hover:not(:disabled) {
     background: linear-gradient(135deg, #0056b3, #004099);
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Click Effect */
 .new-quote-btn:active, .arrow-btn:active:not(:disabled) {
     transform: scale(0.98);
 }
+
+/* Social Media Buttons */
+.social-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+/* Social Buttons */
+.social-btn {
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, color 0.3s ease-in-out;
+}
+
+.social-btn:hover {
+    transform: scale(1.2);
+}
+
+/* Social Icons Colors */
+.social-btn.twitter { color: #1DA1F2; }
+.social-btn.facebook { color: #1877F2; }
+.social-btn.linkedin { color: #0077B5; }
 
 /* Dark Mode */
 body.dark-theme .quote-box {
@@ -107,57 +135,44 @@ body.dark-theme .new-quote-btn:hover,
 body.dark-theme .arrow-btn:hover:not(:disabled) {
     background: linear-gradient(135deg, #0070cc, #0058aa);
 }
-/* Social Media Buttons */
-.social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 15px;
-}
 
-/* Default Social Button Styling */
-.social-btn {
-    background: transparent;  /* Remove background */
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: transform 0.2s ease-in-out, color 0.3s ease-in-out;
-}
+/* Dark Mode Fix for Social Icons */
+body.dark-theme .social-btn { color: white; }
 
-/* Hover Effect */
-.social-btn:hover {
-    transform: scale(1.2);
-}
+body.dark-theme .social-btn.twitter:hover { color: #1DA1F2; }
+body.dark-theme .social-btn.facebook:hover { color: #1877F2; }
+body.dark-theme .social-btn.linkedin:hover { color: #0077B5; }
 
-/* Twitter */
-.social-btn.twitter {
-    color: #1DA1F2;
-}
+/* 🎯 Responsive Styles */
 
-/* Facebook */
-.social-btn.facebook {
-    color: #1877F2;
-}
+/* Mobile Friendly: Adjust Instead of Hiding */
+@media (max-width: 480px) {
+    .quote-box {
+        max-width: 95%;  /* Make it smaller but still visible */
+        padding: 20px;   /* Reduce padding for small screens */
+    }
 
-/* LinkedIn */
-.social-btn.linkedin {
-    color: #0077B5;
-}
+    .quote {
+        font-size: 1.2rem;  /* Reduce font size for better readability */
+    }
 
-/* Dark Mode Fix */
-body.dark-theme .social-btn {
-    color: white; /* Change icon color to white in dark mode */
-}
+    .author {
+        font-size: 1rem;
+    }
 
-/* Keep Hover Color in Dark Mode */
-body.dark-theme .social-btn.twitter:hover {
-    color: #1DA1F2;
-}
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 10px;
+    }
 
-body.dark-theme .social-btn.facebook:hover {
-    color: #1877F2;
-}
+    .new-quote-btn, .arrow-btn {
+        width: 100%;  /* Full-width buttons for better usability */
+        max-width: 180px;
+        padding: 10px;
+    }
 
-body.dark-theme .social-btn.linkedin:hover {
-    color: #0077B5;
+    .social-buttons {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
 }
