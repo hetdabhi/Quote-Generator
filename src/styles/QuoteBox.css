@@ -145,34 +145,9 @@ body.dark-theme .social-btn.linkedin:hover { color: #0077B5; }
 
 /* 🎯 Responsive Styles */
 
-/* Mobile Friendly: Adjust Instead of Hiding */
+/* Hide Quote Box on Small Screens */
 @media (max-width: 480px) {
     .quote-box {
-        max-width: 95%;  /* Make it smaller but still visible */
-        padding: 20px;   /* Reduce padding for small screens */
-    }
-
-    .quote {
-        font-size: 1.2rem;  /* Reduce font size for better readability */
-    }
-
-    .author {
-        font-size: 1rem;
-    }
-
-    .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-        gap: 10px;
-    }
-
-    .new-quote-btn, .arrow-btn {
-        width: 100%;  /* Full-width buttons for better usability */
-        max-width: 180px;
-        padding: 10px;
-    }
-
-    .social-buttons {
-        flex-wrap: wrap;
-        gap: 8px;
+        display: none;
     }
 }
